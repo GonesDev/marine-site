@@ -1,0 +1,177 @@
+/* BASE */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #020617;
+  color: white;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #020617;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #38bdf8;
+}
+
+/* HERO */
+header {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+h1 {
+  font-size: 60px;
+  margin: 0;
+}
+
+header p {
+  color: #94a3b8;
+}
+
+/* CARDS */
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 40px auto;
+  max-width: 1000px;
+  background: #1e293b;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: #334155;
+}
+
+/* IMAGE */
+.card img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+/* TEXTE */
+.text {
+  padding: 30px;
+  width: 50%;
+}
+
+.text h2 {
+  color: white;
+}
+
+.text p {
+  color: #cbd5f5;
+}
+
+/* INVERSION */
+.reverse {
+  flex-direction: row-reverse;
+}
+
+/* RESPONSIVE */
+@media (max-width: 800px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .card img,
+  .text {
+    width: 100%;
+  }
+}
+
+/* ANIMATION SAFE (pas de bug) */
+.card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* HOVER IMAGE */
+.card:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.insta-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #feda75, #d62976, #962fbf);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.insta-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.card img {
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+  transition: 0.4s;
+}
+
+.card:hover img {
+  box-shadow: 0 0 40px rgba(56, 189, 248, 0.6);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  background: #020617;
+  color: #94a3b8;
+}
