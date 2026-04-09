@@ -1,24 +1,26 @@
-// LOADER
+// LOADER SAFE
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
 
-  setTimeout(() => {
-    loader.style.opacity = "0";
-    loader.style.transition = "0.5s";
-
+  if (loader) {
     setTimeout(() => {
-      loader.style.display = "none";
-    }, 500);
-  }, 1200);
+      loader.style.opacity = "0";
+      loader.style.transition = "0.5s";
 
-  // afficher les cards dès le chargement
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 500);
+    }, 1200);
+  }
+
+  // afficher les cards
   document.querySelectorAll(".card").forEach(card => {
     card.classList.add("show");
   });
 });
 
 
-// ANIMATION AU SCROLL
+// ANIMATION SCROLL
 const cards = document.querySelectorAll(".card");
 
 window.addEventListener("scroll", () => {
