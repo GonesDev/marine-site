@@ -275,3 +275,11 @@ footer {
   50% { transform: scale(1.2); }
   100% { transform: scale(1); }
 }
+
+header img {
+  width: 150px;
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+}
