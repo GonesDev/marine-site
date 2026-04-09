@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Marine 974</title>
+
+  <!-- MOBILE -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<!-- supprimer ça -->
-<!-- SUPPRIME ÇA -->
-<div id="loader">
-  <img src="logo.png">
-</div>
+
 <!-- NAV -->
 <nav>
   <h2>Marine 974</h2>
@@ -19,12 +20,14 @@
     <li><a href="#about">Moi</a></li>
     <li><a href="#job">Métier</a></li>
     <li><a href="#animals">Animaux</a></li>
+    <li><a href="#gallery">Galerie</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <header>
+  <img src="logo.png" alt="logo">
   <h1>Marine 974</h1>
   <p>Soigneuse animalière à La Réunion</p>
 </header>
@@ -32,46 +35,51 @@
 <!-- CONTENU -->
 <main>
 
+<!-- QUI SUIS-JE -->
 <section id="about" class="card">
   <div class="text">
     <h2>🌴 Qui suis-je ?</h2>
     <p>Je suis Marine, passionnée par les animaux et la nature de La Réunion.</p>
   </div>
-<img src="images/marine.jpg">
+  <img src="images/marine.jpg" alt="Marine">
 </section>
 
+<!-- MÉTIER -->
 <section id="job" class="card reverse">
-<img src="images/moi.png">
+  <img src="images/marine.jpg" alt="Marine">
   <div class="text">
     <h2>🐾 Mon métier</h2>
     <p>Je soigne, nourris et protège les animaux au quotidien.</p>
   </div>
 </section>
 
+<!-- ANIMAUX -->
 <section id="animals" class="card">
   <div class="text">
     <h2>🐢 Les animaux</h2>
     <p>Tortues, oiseaux, reptiles et faune sauvage de l’île.</p>
   </div>
-  <img src="images/chat.png">
+  <img src="images/tortue.jpg" alt="Tortue">
 </section>
 
+<!-- GALERIE -->
 <section id="gallery">
   <h2 style="text-align:center;">🐢 Galerie Animaux</h2>
 
   <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?q=80&w=1000">
-    <img src="https://images.unsplash.com/photo-1462888210965-cdf193fb74de?q=80&w=1000">
-    <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?q=80&w=1000">
+    <img src="images/tortue.jpg" alt="">
+    <img src="images/lion.jpg" alt="">
+    <img src="images/oiseau.jpg" alt="">
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact" class="card reverse">
-  <img src="images/marine.jpg">
+  <img src="images/marine.jpg" alt="Marine">
 
   <div class="text">
     <h2>📞 Contact</h2>
-    <p>Email : marineloulou56@gmail.com</p>
+    <p>Email : marine974@email.com</p>
 
     <a href="https://instagram.com/marine87836" target="_blank" class="insta-btn">
       📸 Suis-moi sur Instagram
@@ -81,8 +89,13 @@
 
 </main>
 
+<!-- FOOTER -->
 <footer>
   <p>© 2026 Marine 974 - Soigneuse animalière 🐾</p>
 </footer>
+
+<!-- JS -->
+<script src="script.js"></script>
+
 </body>
 </html>
