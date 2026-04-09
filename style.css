@@ -13,8 +13,9 @@ nav {
   align-items: center;
   padding: 20px 40px;
   background: #020617;
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   z-index: 100;
 }
 
@@ -38,7 +39,20 @@ nav a:hover {
 /* HERO */
 header {
   text-align: center;
-  padding: 80px 20px;
+  padding: 140px 20px 60px;
+}
+
+/* LOGO */
+header img {
+  width: 150px;
+  display: block;
+  margin: 0 auto 20px;
+  filter: drop-shadow(0 0 15px rgba(56, 189, 248, 0.5));
+  transition: 0.3s;
+}
+
+header img:hover {
+  transform: scale(1.05);
 }
 
 h1 {
@@ -61,6 +75,13 @@ header p {
   border-radius: 20px;
   overflow: hidden;
   transition: 0.3s;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card:hover {
@@ -74,6 +95,13 @@ header p {
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s ease, filter 0.6s ease;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+}
+
+.card:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+  box-shadow: 0 0 40px rgba(56, 189, 248, 0.6);
 }
 
 /* TEXTE */
@@ -95,35 +123,28 @@ header p {
   flex-direction: row-reverse;
 }
 
-/* RESPONSIVE */
-@media (max-width: 800px) {
-  .card {
-    flex-direction: column;
-  }
-
-  .card img,
-  .text {
-    width: 100%;
-  }
+/* GALERIE */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  max-width: 1000px;
+  margin: 20px auto;
 }
 
-/* ANIMATION SAFE (pas de bug) */
-.card {
-  opacity: 1;
-  transform: translateY(0);
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: 0.3s;
 }
 
-.card.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* HOVER IMAGE */
-.card:hover img {
+.gallery img:hover {
   transform: scale(1.05);
-  filter: brightness(1.1);
 }
 
+/* INSTAGRAM BUTTON */
 .insta-btn {
   display: inline-block;
   margin-top: 15px;
@@ -141,114 +162,13 @@ header p {
   opacity: 0.9;
 }
 
-.card img {
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
-  transition: 0.4s;
-}
-
-.card:hover img {
-  box-shadow: 0 0 40px rgba(56, 189, 248, 0.6);
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  max-width: 1000px;
-  margin: 20px auto;
-}
-
-.gallery img {
-  width: 100%;
-  border-radius: 15px;
-  transition: 0.3s;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
+/* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
   margin-top: 40px;
   background: #020617;
   color: #94a3b8;
-}
-
-/* 📱 MOBILE OPTIMISATION */
-@media (max-width: 768px) {
-
-  /* NAV */
-  nav {
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-  }
-
-  nav h2 {
-    margin-bottom: 10px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-  }
-
-  /* HERO */
-  header {
-    padding: 50px 20px;
-  }
-
-  h1 {
-    font-size: 35px;
-  }
-
-  header p {
-    font-size: 14px;
-  }
-
-  /* CARDS */
-  .card {
-    flex-direction: column !important;
-    margin: 20px;
-  }
-
-  .card img {
-    width: 100%;
-    height: 250px;
-  }
-
-  .text {
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-  }
-
-  .text h2 {
-    font-size: 20px;
-  }
-
-  .text p {
-    font-size: 14px;
-  }
-
-  /* GALERIE */
-  .gallery {
-    grid-template-columns: 1fr;
-    padding: 0 15px;
-  }
-
-  .gallery img {
-    height: 200px;
-  }
-
-  /* BOUTON */
-  .insta-btn {
-    width: 100%;
-    text-align: center;
-  }
 }
 
 /* LOADER */
@@ -276,10 +196,49 @@ footer {
   100% { transform: scale(1); }
 }
 
-header img {
-  width: 150px;
-  max-width: 80%;
-  height: auto;
-  display: block;
-  margin: 0 auto 20px;
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+
+  nav {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header {
+    padding: 120px 20px 40px;
+  }
+
+  h1 {
+    font-size: 35px;
+  }
+
+  .card {
+    flex-direction: column !important;
+    margin: 20px;
+  }
+
+  .card img {
+    width: 100%;
+    height: 250px;
+  }
+
+  .text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    padding: 0 15px;
+  }
+
+  .insta-btn {
+    width: 100%;
+    text-align: center;
+  }
 }
